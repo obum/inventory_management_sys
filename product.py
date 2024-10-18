@@ -10,7 +10,7 @@ class Product:
         return f"{self.product_name}, \nCategory: {self.product_category}, \nstock_quantity: {self.quantity}, \nprice: {self.product_price}"
     
     def get_product(self):
-        self.product_name : str = input(f'Enter the product nme : ')
+        self.product_name : str = input(f'Enter the product name : ')
         self.product_category :str = input(f'Enter the product category : ')
         self.quantity: int = input(f'Enter the product quanity : ')
         self.product_price : float = input(f'Enter the product price : ')

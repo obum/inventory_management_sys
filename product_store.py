@@ -1,5 +1,6 @@
 # from mysql.connector.cursor import MySQLCursor
 # from sqlite3 import connect
+from unittest import result
 import Mysqlsever
 from product import Product
 
@@ -26,12 +27,20 @@ class Product_store:
             """
         cursor.execute(add_new_product_query, (a_product.product_name, a_product.product_category, a_product.quantity, a_product.product_price))
         connection.commit()
-        
+        print()
         print(f'product: {a_product.__str__()} added successfully')
     
         
         
-    # def view_all_product(self):
-    #     for item in self.shelf:
-    #         print(item.product_name, item.quantity)
+    def view_all_product(self):
+        
+        view_all_product_query = """
+            SELECT product_name 
+            FROM products
+        """
+        
+        cursor.execute(view_all_product_query)
+        
+        for product in cursor.fetchall():
+            print(product)
         

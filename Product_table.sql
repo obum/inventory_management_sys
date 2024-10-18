@@ -9,3 +9,5 @@ category varchar(130),
 stock_quantity INT,
 price DOUBLE
 );
+
+SELECT product_name FROM products;
