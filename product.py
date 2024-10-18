@@ -1,13 +1,20 @@
 class Product:
-    def __init__(self, name: str, category: str, price: float = 0, quantity: int =0):
-        self.product_name = name
-        self.product_category = category
-        self.quantity = quantity
-        self.product_price = price
+    def __init__(self):
+        self.product_name = ''
+        self.product_category = ''
+        self.quantity = 0
+        self.product_price = 0
         self.inventory_list: list[dict] = []
         
     def __str__(self) -> str:
-        return f"Product: {self.product_name}, Category: {self.product_category}, stock_quantity: {self.quantity}, price: {self.product_price}"
+        return f"{self.product_name}, \nCategory: {self.product_category}, \nstock_quantity: {self.quantity}, \nprice: {self.product_price}"
+    
+    def get_product(self):
+        self.product_name : str = input(f'Enter the product nme : ')
+        self.product_category :str = input(f'Enter the product category : ')
+        self.quantity: int = input(f'Enter the product quanity : ')
+        self.product_price : float = input(f'Enter the product price : ')
+        return self
         
     
    
@@ -42,10 +49,5 @@ class Product:
     #     pass
   
   
-phone = Product('phone', 'electronic', 1, 15000)  
-
-def main():   
-    print(phone)
-    
-if __name__ == "__main__":
-    main()
+# phone = Product('phone', 'electronic', 1, 15000)  
+# print(phone)
