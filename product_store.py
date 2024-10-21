@@ -200,7 +200,8 @@ class Product_store:
         if len(self.found_items) == 0:
             print(f'"{self.user_input}" not found in database')
             
-        else:        
+        else:      
+            print(f'Search Results: {len(self.found_items)} hits found for "{self.user_input}" in database')  
             self.search_table.field_names = ["Product_id", "Product_name", "Category", "Stock Quantity", "Price"]
             for line in self.found_items:
                 self.search_table.add_row(line)

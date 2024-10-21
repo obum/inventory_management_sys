@@ -6,17 +6,7 @@ def main():
     product = Product()
     shop_rite = Product_store()
     while True:
-        user_command = input(f'Enter "c" to create a product.
-                             \nEnter "a" to add the product to inventory.
-                             \nEnter "v" to view all products.
-                             \nEnter "u" to update a products details.
-                             \nEnter "r" to restock a products quantity.
-                             \nEnter "d" to delete a product.
-                             \nEnter "s" to display products with low quantities.
-                             \nEnter "search" to Search products by name or category.
-                             \nEnter "sort" to Sort products by price or stock quantity.
-                             \nEnter "x" to exit the system
-                             \nEnter command here >>>> ').lower()
+        user_command = input(f'Enter "c" to create a product.\nEnter "a" to add the product to inventory.\nEnter "v" to view all products.\nEnter "u" to update a products details.\nEnter "r" to restock a products quantity.\nEnter "d" to delete a product.\nEnter "s" to display products with low quantities.\nEnter "search" to Search products by name or category.\nEnter "sort" to Sort products by price or stock quantity.\nEnter "x" to exit the system.\nEnter command here >>>> ').lower()
         print()
         match user_command:
             case "c":
