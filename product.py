@@ -7,7 +7,7 @@ class Product:
         self.inventory_list: list[dict] = []
         
     def __str__(self) -> str:
-        return f"{self.product_name}, \nCategory: {self.product_category}, \nstock_quantity: {self.quantity}, \nprice: {self.product_price}"
+        return f"Product: {self.product_name}, \nCategory: {self.product_category}, \nstock_quantity: {self.quantity}, \nprice: {self.product_price}"
     
     def create_product(self):
         self.product_name : str = input(f'Enter the product name : ')

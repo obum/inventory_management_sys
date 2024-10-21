@@ -5,8 +5,9 @@ def main():
     print('Welcome to ShopRite Stores Inventory System\nEnter the following commands to utlize the system\n\n')
     product = Product()
     shop_rite = Product_store()
+    
     while True:
-        user_command = input(f'Enter "c" to create a product,\nEnter "a" to add the product,\nEnter "v" to view all products\nEnter "u" to update a products details,\nEnter "r" to restock a products quantity\nEnter "x" to exit the system\nEnter command here >>>> ')
+        user_command = input(f'Enter "c" to create a product.\nEnter "a" to add the product to inventory.\nEnter "v" to view all products.\nEnter "u" to update a products details.\nEnter "r" to restock a products quantity.\nEnter "d" to delete a product.\nEnter "s" to display products with low quantities.\nEnter "search" to Search products by name or category.\nEnter "x" to exit the system\nEnter command here >>>> ').lower()
         print()
         match user_command:
             case "c":
@@ -16,7 +17,7 @@ def main():
                 shop_rite.add_new_product(product)
                 print()
             case "v":
-                print(shop_rite.view_all_product())
+                shop_rite.all_product_table()
                 print()
             case "u":
                 shop_rite.update_product_detail()
@@ -24,8 +25,17 @@ def main():
             case "r":
                 shop_rite.restock_product_quantity()
                 print()
+            case "d":
+                shop_rite.delete_a_product()
+                print()    
+            case "s":
+                shop_rite.check_low_stock_alert()
+                print()           
+            case "search":
+                shop_rite.search_name_and_category()
+                print()
             case "x":
-                print('Goodbye from ShopRite Inventory System')
+                print('Goodbye from ShopRite Inventory System.')
                 break
         
         
