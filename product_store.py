@@ -1,8 +1,3 @@
-# from mysql.connector.cursor import MySQLCursor
-# from sqlite3 import connect
-# from traceback import print_list
-# from unittest import result
-# from numpy import delete
 import Mysqlsever
 from product import Product
 from prettytable import PrettyTable
@@ -11,9 +6,6 @@ from prettytable import PrettyTable
 connection = Mysqlsever.create_connection()
 
 cursor = connection.cursor()
-
-
-
 
 safety_stock = 5
 
@@ -170,7 +162,6 @@ class Product_store:
         print()
         print(f'{product_details_to_delete[1] } Deleted Succsessfully')
         
-    
     def check_low_stock_alert(self):
         
         print(f'List of products with stock below saftety stock level (5)')
@@ -196,8 +187,7 @@ class Product_store:
         self.user_input = input('Search for a product name or category: ').lower()
         
         product_list = list(self.view_all_product().values())
-        # print(product_list, product_list[1])
-        
+               
         self.name_list = [product[1] for product in product_list]
         self.category_list = [product[2] for product in product_list]
         self.found_items = []
@@ -217,6 +207,37 @@ class Product_store:
             self.search_table.align = "l"
             print(self.search_table)
                     
-                
-                
+    def sort_products(self):
+        self.sorted_table = PrettyTable()
         
+        self.user_sort_method = input('Enter "p" to sort products by price\nOR\nEnetr "q" to sort products by stock quantity.\nEnter command >>>> ').lower()
+        self.user_sort_order = input('Enter "a" to sort products in ascending order\nOR\nEnetr "d" to sort products in descending.\nEnter command >>>> ').lower()
+        
+
+        if self.user_sort_method == 'p':
+            self.user_sort_method = 'price'
+        if self.user_sort_method == 'q':
+            self.user_sort_method = 'stock_quantity'
+        if self.user_sort_order == 'a':
+            self.user_sort_order = 'ASC'
+        if self.user_sort_order == 'd':
+            self.user_sort_order = 'DESC'
+        # if self.user_sort_method == 'p' or self.user_sort_method == 'q':
+        print()
+        print(f'Products sorted by {self.user_sort_method}, in {self.user_sort_order} order')
+        
+        sort_query = f"""
+            SELECT * FROM products ORDER BY {self.user_sort_method} {self.user_sort_order}; 
+        """
+        
+        cursor.execute(sort_query)
+        
+        self.sorted_products = cursor.fetchall()
+        
+        sorted_list = [product for product in self.sorted_products]
+                      
+        self.sorted_table.field_names = ["Product_id", "Product_name", "Category", "Stock Quantity", "Price"]
+        for line in list(sorted_list):
+            self.sorted_table.add_row(line)
+        self.sorted_table.align = "l"
+        print(self.sorted_table)

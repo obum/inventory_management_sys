@@ -1,9 +1,8 @@
 from mysql.connector import connect
 
 DB_NAME = 'product_store'
-values = ''
-# Add a product to database table
 
+# A function to return a database connection
 
 def create_connection():
     connection = connect(
