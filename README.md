@@ -37,6 +37,24 @@ This script creates a connection to a MySQL database *'product_store'* using the
 
 ---
 
+# README for Product
+
+The `product.py` file is a module to help create and handle the product object creation and its attributes.
+
+
+### Key Features:
+
+- **Product object constructor**:  
+  Defines the attributes frequired for a product in the inventory management system.
+
+- **Product string**:  
+  Defines the string representation for the product.
+
+- **Methods in `product.py`**:
+  - `create_product()`: creates a product object.
+
+---
+
 # README for Product_store
 
 This project is an Inventory Management System built with Python and MySQL. 
