@@ -65,6 +65,9 @@ You can manage products in a database, including adding, updating, deleting, and
 - **Database Connection**:  
   imports the `connection` and `cursor` objects from the Mysqlsever.py module.
 
+- **PrettyTable library**:  
+  imports the `PrettyTable` library to help output a the database contents in a readable and table format on the terminal.
+
 - **Product_store Class**:  
   Contains methods for all database operations like creating a database, adding products, updating quantities, and more.
 
@@ -94,7 +97,7 @@ You can manage products in a database, including adding, updating, deleting, and
   Displays a menu with options like creating a product, adding the created product to inventory, updating stock details, deleting a product, and more.
 
 - **Core Operations**:  
-  Based on the user’s menu selection, the program calls the appropriate methods from `product_store` to handle tasks like, this is done using match-case control flow:
+  Based on the user’s menu selection, the program calls the appropriate methods from `product_store` to handle tasks like, this is done using `match-case` control flow:
   - Creating a product.
   - Adding and updating products.
   - Viewing and sorting inventory.
@@ -102,7 +105,7 @@ You can manage products in a database, including adding, updating, deleting, and
   - Exiting the inventory management system.
 
 
-This file is designed to make managing your inventory easy through simple command-line inputs.
+This file is designed to make managing ShopRite inventory management system easy through simple command-line inputs.
 
 <!-- # BUGS IN CURRENT IMPLEMENTATION
   To be updated... -->
