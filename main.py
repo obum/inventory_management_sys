@@ -39,6 +39,9 @@ def main():
             case "x":
                 print('Goodbye from ShopRite Inventory System.')
                 break
+            case _:
+                print('Unknow command: Try agin!!!')
+                print()
         
         
 

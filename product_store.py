@@ -1,10 +1,9 @@
+# from Mysqlsever import connection, cursor
 import Mysqlsever
 from product import Product
 from prettytable import PrettyTable
 
-
 connection = Mysqlsever.create_connection()
-
 cursor = connection.cursor()
 
 safety_stock = 5
